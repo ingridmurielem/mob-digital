@@ -1,0 +1,83 @@
+# 🧹 Comparador e Unificador de Planilhas CSV
+
+Este script compara **duas planilhas CSV** e gera uma **terceira planilha unificada**, 
+mantendo todos os registros e priorizando os dados mais recentes (da Planilha 2).
+
+---
+
+## ⚙️ Funcionalidade
+
+Dadas duas planilhas com o mesmo formato, o script:
+
+- Compara os nomes das pessoas nas duas planilhas;
+- Atualiza as informações se o mesmo nome aparece com dados diferentes (prioriza a Planilha 2);
+- Adiciona novos registros da Planilha 2 que não estavam na Planilha 1;
+- Gera uma terceira planilha chamada `planilha_final.csv`.
+
+---
+
+## 📦 Estrutura esperada
+
+As planilhas devem estar no formato CSV (valores separados por vírgula), como:
+
+
+**planilha1.csv**
+joao alberto de jesus,519999999,esteio
+maria,519999999,esteio
+
+markdown
+Copiar código
+
+**planilha2.csv**
+maria,519999999,porto alegre
+jose roberto,518777777,sapucaia
+matheus,519999999,esteio
+
+yaml
+Copiar código
+
+---
+
+## 🧾 Saída esperada
+
+**planilha_final.csv**
+joao alberto de jesus,519999999,esteio
+maria,519999999,porto alegre
+jose roberto,518777777,sapucaia
+matheus,519999999,esteio
+
+yaml
+Copiar código
+
+---
+
+## 🚀 Como Rodar
+
+### 🖥️ macOS / Linux
+
+1. Abra o terminal na pasta do projeto:
+   ```bash
+   cd caminho/para/seu/projeto
+Crie e ative um ambiente virtual:
+python3 -m venv .venv
+source .venv/bin/activate
+Instale as dependências:
+
+pip install -r requirements.txt
+Execute o script:
+
+python3 sanitiza.py
+
+🪟 Windows (PowerShell)
+No terminal (PowerShell):
+
+cd caminho\para\seu\projeto
+Crie e ative o ambiente virtual:
+python -m venv .venv
+.venv\Scripts\activate
+Instale as dependências:
+
+pip install -r requirements.txt
+Execute o script:
+
+python sanitiza.py
